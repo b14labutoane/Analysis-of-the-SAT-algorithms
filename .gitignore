@@ -172,3 +172,7 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+analysis/test_data/clauzemici.csv
+analysis/test_data/clauzemedii.csv
+analysis/test_data/clauzemari.csv

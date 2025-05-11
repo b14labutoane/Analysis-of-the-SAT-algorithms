@@ -16,4 +16,3 @@ def salvarecsv(filename, nrclauze, nrlit):
 salvarecsv("clauzemici", 10000, 200)
 salvarecsv("clauzemedii", 15000, 500)
 salvarecsv("clauzemari", 20000, 1000)
-
