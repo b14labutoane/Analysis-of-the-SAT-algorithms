@@ -34,16 +34,15 @@ Large datasets (tens of thousands of clauses)
 | DPLL           | 0.1s         | 1.6s          | 6.8s         |
 
 ## Repository structure 
-📂 Analysis-of-the-SAT-algorithms/
-│── 📁 analysis/                 # Contains scripts for running and analyzing SAT algorithms
-│   ├── 📁 test_data/            # Contains test datasets used for evaluation
-│   │   ├── 📝 clauzemici.csv    # Small dataset (few clauses, few literals)
-│   │   ├── 📝 clauzemedii.csv   # Medium dataset (thousands of clauses)
-│   │   ├── 📝 clauzemari.csv    # Large dataset (tens of thousands of clauses)
-│── 🟥 resolution.py             # Resolution-based SAT solver
-│── 🔵 davisputnam.py            # Davis-Putnam SAT solver
-│── 🟢 davisputnamll.py          # Davis-Putnam-Logemann-Loveland (DPLL) SAT solver
-│── 📄 README.md                 # Project documentation
-│── 🚫 .gitignore                # Specifies files to be ignored in Git commits
+- 📂 Analysis-of-the-SAT-algorithms/
+  - 📁 analysis/                    ( Contains scripts for running and analyzing SAT algorithms )
+    - 📁 test_data/                 ( Contains test datasets used for evaluation )
+      - 📝 clauzemici.csv           ( Small dataset (few clauses, few literals) )
+      - 📝 clauzemedii.csv          ( Medium dataset (thousands of clauses) )
+      - 📝 clauzemari.csv           ( Large dataset (tens of thousands of clauses) )
+    - 🟥 resolution.py              ( Resolution-based SAT solver )
+    - 🔵 davisputnam.py             ( Davis-Putnam SAT solver )
+    - 🟢 davisputnamll.py           ( Davis-Putnam-Logemann-Loveland (DPLL) SAT solver )
+
 
 
