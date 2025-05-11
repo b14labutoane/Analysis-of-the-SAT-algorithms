@@ -33,7 +33,8 @@ Large datasets (tens of thousands of clauses)
 | Davis-Putnam   | 0.3s         | 2.1s          | 10.5s        |
 | DPLL           | 0.1s         | 1.6s          | 6.8s         |
 
-## 📂 Analysis-of-the-SAT-algorithms/
+## Repository structure 
+📂 Analysis-of-the-SAT-algorithms/
 │── 📁 analysis/                 # Contains scripts for running and analyzing SAT algorithms
 │   ├── 📁 test_data/            # Contains test datasets used for evaluation
 │   │   ├── 📝 clauzemici.csv    # Small dataset (few clauses, few literals)
