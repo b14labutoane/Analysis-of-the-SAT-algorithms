@@ -13,6 +13,11 @@ def salvarecsv(filename, nrclauze, nrlit):
     data = pd.DataFrame({"Clauze":[list(clauza) for clauza in clauze]})
     data.to_csv(f"analysis/test_data/{filename}.csv", index=False)
 
-salvarecsv("clauzemici", 10000, 200)
-salvarecsv("clauzemedii", 15000, 500)
-salvarecsv("clauzemari", 20000, 1000)
+#Setul de date #1
+#salvarecsv("clauzemici", 30000, 1000)
+#salvarecsv("clauzemedii", 50000, 1500)
+#salvarecsv("clauzemari", 100000, 2000)
+#Setul de date #2
+#salvarecsv("clauzemici", 10000, 200)
+#salvarecsv("clauzemedii", 15000, 500)
+#salvarecsv("clauzemari", 20000, 1000)

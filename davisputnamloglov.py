@@ -1,4 +1,5 @@
-from resolution import resolution, citire_clauze
+from davisputnam import davis_putnam
+from resolution import citire_clauze
 import time
 
 def propagarea_unitatii(clauze):
@@ -50,43 +51,35 @@ def literal_pur(clauze):
         return literal_pur(clauze_reduse)
     return clauze_reduse
 
-def davis_putnam(clauze):
-    while True:
-        clauze_uno = set()
-        for clauza in clauze:
-            if len(clauza)==1:
-                clauze_uno.add(next(iter(clauza)))
 
-        literali = {}
-        for clauza in clauze:
-            for lit in clauza:
-                if lit in literali:
-                    literali[lit]+=1
-                else:
-                    literali[lit]=1
+def davis_putnam_ll(clauze, asign=None):
+    if asign is None:
+        asign = set()
 
-        literali_puri = set()
-        for lit in literali:
-            if -lit not in literali:
-                literali_puri.add(lit)
+    clauze = propagarea_unitatii(clauze)
+    if clauze is None:
+        return False
 
-        clauze_noi = []
-        mod = False
-        for clauza in clauze:
-            if any(lit in clauze_uno for lit in clauza):
-                mod = True
-                continue
-            clauza_filtrata = set()
-            for lit in clauza:
-                if -lit not in clauze_uno and lit not in literali_puri:
-                    clauza_filtrata.add(lit)
-            if not clauza_filtrata:
-                return "Formula NESAT"
-            if clauza_filtrata !=clauza:
-                mod = True
-            clauze_noi.append(clauza_filtrata)
-        if not mod:
-            break
-        clauze = clauze_noi
+    clauze = literal_pur(clauze)
+    if not clauze:
+        return True
 
-    return resolution(clauze)
+    frecventa_literali = {}
+    for clauza in clauze:
+        for lit in clauza:
+            frecventa_literali[lit] = frecventa_literali.get(lit, 0) + 1
+    lit = max(frecventa_literali, key=frecventa_literali.get)
+
+    clauze_noi = [{lit}]
+    for clauza in clauze:
+        if lit not in clauza and -lit not in clauza:
+            clauze_noi.append(clauza)
+    if davis_putnam_ll(clauze_noi, asign | {lit}):
+        return True
+
+    clauze_noi = [{-lit}]
+    for clauza in clauze:
+        if lit not in clauza and -lit not in clauza:
+            clauze_noi.append(clauza)
+
+    return davis_putnam_ll(clauze_noi, asign | {-lit})
